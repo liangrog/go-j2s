@@ -1,3 +1,4 @@
+// Generating Go code from json files
 package gen
 
 import (

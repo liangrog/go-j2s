@@ -1,3 +1,4 @@
+// Command line argument data structure
 package conf
 
 import (

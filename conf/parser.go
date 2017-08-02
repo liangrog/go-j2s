@@ -1,3 +1,4 @@
+// Command line argument parser
 package conf
 
 import (
