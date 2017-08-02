@@ -1,0 +1,28 @@
+[
+    {
+        "key1": "value1",
+        "key2": {
+            "key3": "value3",
+            "key4": {
+                "key5": "value5",
+                "key6": [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        },
+        "key7": [
+            "string1",
+            "string2"
+        ],
+        "key8": 23,
+        "key9": 99.999,
+        "key10": -19,
+        "key11": null,
+        "key13": false,
+        "key14": true,
+        "key15": "",
+        "key16": []
+    }
+]
