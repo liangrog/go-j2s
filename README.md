@@ -69,7 +69,7 @@ The generated Go code follows the Go "encoding/json" [unmarshal rules](https://g
 
 Scalability
 -----------
-go-j2s unmarshals all found json file concurrently, providing quick conversion time.
+go-j2s unmarshals all found json files concurrently, providing quick conversion time.
 
 Go Generate
 -----------
