@@ -69,11 +69,11 @@ The generated Go code follows the Go "encoding/json" [unmarshal rules](https://g
 
 Scalability
 -----------
-go-j2s unmarshal all found json file concurrently, providing quick conversion time.
+go-j2s unmarshals all found json file concurrently, providing quick conversion time.
 
 Go Generate
 -----------
-You can also use go-j2s in conjuntion with `go generate`. One way to do it is to drop below line in any of your existing Go file for example:
+You can also use go-j2s in conjuntion with `go generate`. Drop below line in any of your existing Go file for example:
 
     //go:generate go-j2s -in /tmp/ -r 
 
@@ -81,8 +81,3 @@ Then simply run:
 
     $ go generate
 
-Installation
-------------
-Installing via pypi:
-
-    $ sudo pip install lmdo
