@@ -9,8 +9,9 @@ Contents:
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Go Code](#go-code)
-4. [Scalability](#scalability)
-5. [Go Generate](#go-generate)
+4. [Field Name](#field-name)
+5. [Scalability](#scalability)
+6. [Go Generate](#go-generate)
 
 Installation
 ------------
@@ -66,6 +67,9 @@ The generated Go code follows the Go "encoding/json" [unmarshal rules](https://g
     map[string]interface{}, for JSON objects
     nil for JSON null
 
+Field Name
+----------
+The struct field name is in camel case, converting from original json field name. `-` and `_` get removed. For example, `field_name` coverts to `FieldName`. 
 
 Scalability
 -----------
