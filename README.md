@@ -20,6 +20,10 @@ Installation
 
 Uage
 ----
+For help, run option `-h` or `--help`
+
+    $ go-j2s -h
+
 To specify the base directory to search for all the json files, use `-in` option. It defaults to current directory.
 
     $ go-j2s -in /tmp
