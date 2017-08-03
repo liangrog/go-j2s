@@ -2,7 +2,7 @@ go-j2s
 ======
 A tool for generating Go source code from json data file.
 
-It saves your time for writing nested corresponding struct/slice according to in-coming json data. The generated struct/slice is also has field tag added. It also can work on multiple json files at once.
+It saves your time for writing nested corresponding struct/slice according to in-coming json data. The generated struct/slice also has field tag added. It also can work on multiple json files at once.
 
 Contents:
 ---------
