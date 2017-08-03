@@ -18,7 +18,7 @@ Installation
 
     $ go get -u github.com/liangrog/go-j2s/...    
 
-Uage
+Usage
 ----
 For help, run option `-h` or `--help`
 
