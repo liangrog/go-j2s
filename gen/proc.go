@@ -61,22 +61,28 @@ func genGoCodes(a *conf.Args) (string, error) {
 		return "", err
 	}
 
+	if len(files) == 0 {
+		return "", fmt.Errorf("No json files found in the given directory \"%s\". You may try using \"-r\" option", a.InPath)
+	}
+
 	// Concurrently process each found
 	// json file
 	r := make(chan string, len(files))
-	var wg sync.WaitGroup
-	for _, f := range files {
-		wg.Add(1)
-		go func(fp string) {
-			defer wg.Done()
-			r <- fmt.Sprintln(unmarshal(fp))
-		}(f)
-	}
+	go func() {
+		var wg sync.WaitGroup
+		for _, f := range files {
+			wg.Add(1)
+			go func(fp string) {
+				defer wg.Done()
+				r <- fmt.Sprintln(unmarshal(fp))
+			}(f)
+		}
 
-	// Wait for all go routine complete
-	// before we close the channel
-	wg.Wait()
-	close(r)
+		// Wait for all go routine complete
+		// before we close the channel
+		wg.Wait()
+		close(r)
+	}()
 
 	// Fetch all outcomes from channel
 	var codes string
@@ -174,7 +180,7 @@ func getKind(t reflect.Type) reflect.Kind {
 func findJsonFiles(a *conf.Args) ([]string, error) {
 	var fl []string
 
-	// Lambda func to append found json file to result
+	// Closure to append found json file to result
 	add := func(path string, info os.FileInfo) {
 		// Exclude pathes specified
 		if len(a.ExclPath) > 0 {
