@@ -180,7 +180,7 @@ func getKind(t reflect.Type) reflect.Kind {
 func findJsonFiles(a *conf.Args) ([]string, error) {
 	var fl []string
 
-	// Closure to append found json file to result
+	// Anonymous function to append found json file to result
 	add := func(path string, info os.FileInfo) {
 		// Exclude pathes specified
 		if len(a.ExclPath) > 0 {
